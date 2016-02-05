@@ -1,5 +1,6 @@
 #Python例程库
->收集有用的python代码
+
+收集有用的python代码
 
 ## opencv_demo —— 一个opencv demo  
 
