@@ -10,7 +10,8 @@
 
 要点：  
 1、在`brew install opencv`时若遇到问题  
-> Error: Failed to download resource "gnuradio--numpy"  
+> Error: Failed to download resource "gnuradio--numpy" 
+
 请升级你的brew,`sudo brew upgrade`  
 参考：  
 > https://github.com/metacollin/homebrew-gnuradio/issues/48  
