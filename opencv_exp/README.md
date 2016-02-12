@@ -25,10 +25,14 @@
 
 2、最后请按提示配置环境变量，以免opencv与numpy版本不一致导致的import cv2错误
 
-## Hough Line Transform --- line_transform
+## 直线检测 --- opencv_line_transform
 
 > http://opencv-python-tutroals.readthedocs.org/en/latest/py_tutorials/py_imgproc/py_houghlines/py_houghlines.html#hough-lines
 
-## 直线检测 --- opencv_line_transform
-
 ## 人脸识别 --- opencv_face_detect
+
+> http://opencv-python-tutroals.readthedocs.org/en/latest/py_tutorials/py_objdetect/py_face_detection/py_face_detection.html#face-detection  
+
+> http://www.makematics.com/research/viola-jones/  
+
+
