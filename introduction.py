@@ -17,7 +17,8 @@
 
 # 获取帮助
 """
-- Ipython --- help
+- help
+- 官方文档
 - Google
 """
 
@@ -64,7 +65,7 @@ print tuple_data[1:3]
 dic_data = {"name": "lzm", "age": 18, "is_fighter": True}
 print dic_data
 print dic_data["is_fighter"]
-dic_data["is_single"] = True
+dic_data["is_student"] = False
 print dic_data
 
 ## ndarray
