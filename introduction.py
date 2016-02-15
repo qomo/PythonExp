@@ -146,7 +146,7 @@ f.close()
 常用库
 - numpy 
 - scipy
-- matplotlib
+- matplotlib(http://matplotlib.org/gallery.html)
 - cv2
 - ctypes
 ......
