@@ -1,6 +1,7 @@
 import socket
 import sys
 import json
+import time
 
 
 def tcpSend(str2send):
@@ -35,5 +36,31 @@ cmd_pull_sensor_data = json.dumps({
 	"SENSOR_TYPE": "TYPE_ACCELEROMETER"
 	})
 
-print cmd_set_avr_num
-print tcpSend("SET_CHECK_ACC")
+def test_sensor(sensor_type):
+	cmd_sensor_on = json.dumps({
+		"CMD": "SENSOR_ON",
+		"SENSOR_TYPE": sensor_type
+		})
+	cmd_sensor_off = json.dumps({
+		"CMD": "SENSOR_OFF",
+		"SENSOR_TYPE": sensor_type
+		})
+	cmd_pull_sensor_data = json.dumps({
+		"CMD": "PULL_DATA",
+		"SENSOR_TYPE": sensor_type
+		})
+	print tcpSend(cmd_sensor_on)
+	print tcpSend(cmd_pull_sensor_data)
+	print tcpSend(cmd_sensor_off)
+
+
+test_sensor("TYPE_ACCELEROMETER")
+test_sensor("TYPE_GYROSCOPE")
+test_sensor("TYPE_MAGNETIC_FIELD")
+# print cmd_set_avr_num
+# print tcpSend(cmd_sensor_on)
+# time.sleep(0.5)
+# print tcpSend(cmd_pull_sensor_data)
+# print tcpSend(cmd_sensor_off)
+# print tcpSend(cmd_set_avr_num)
+# print tcpSend("SET_CHECK_ACC")
