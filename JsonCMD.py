@@ -5,7 +5,7 @@ import time
 
 
 def tcpSend(str2send):
-	HOST, PORT = "192.168.1.152", 12580
+	HOST, PORT = "127.0.0.1", 12580
 	# Create a socket (SOCK_STREAM means a TCP socket)
 	sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	try:
@@ -21,7 +21,7 @@ def tcpSend(str2send):
 
 cmd_set_avr_num = json.dumps({
 	"CMD": "SET_AVR_NUM",
-	"NUM": 10
+	"NUM": 20
 	})
 cmd_sensor_on = json.dumps({
 	"CMD": "SENSOR_ON",
@@ -34,6 +34,20 @@ cmd_sensor_off = json.dumps({
 cmd_pull_sensor_data = json.dumps({
 	"CMD": "PULL_DATA",
 	"SENSOR_TYPE": "TYPE_ACCELEROMETER"
+	})
+cmd_wifi_connect = json.dumps({
+	"CMD": "CONNECT_WIFI",
+	"SSID": "dd-wrt_2.4g",
+	"KEY": "13817486091"
+	})
+cmd_get_wifi_info = json.dumps({
+	"CMD": "GET_WIFI_INFO"
+	})
+cmd_play_music = json.dumps({
+	"CMD": "PLAY_MUSIC"
+	})
+cmd_stop_music = json.dumps({
+	"CMD": "STOP_MUSIC"
 	})
 
 def test_sensor(sensor_type):
@@ -54,9 +68,11 @@ def test_sensor(sensor_type):
 	print tcpSend(cmd_sensor_off)
 
 
-test_sensor("TYPE_ACCELEROMETER")
-test_sensor("TYPE_GYROSCOPE")
-test_sensor("TYPE_MAGNETIC_FIELD")
+# test_sensor("TYPE_ACCELEROMETER")
+# test_sensor("TYPE_GYROSCOPE")
+# test_sensor("TYPE_MAGNETIC_FIELD")
+test_sensor("TYPE_LIGHT")
+# print tcpSend(cmd_wifi_connect)
 # print cmd_set_avr_num
 # print tcpSend(cmd_sensor_on)
 # time.sleep(0.5)
@@ -64,3 +80,7 @@ test_sensor("TYPE_MAGNETIC_FIELD")
 # print tcpSend(cmd_sensor_off)
 # print tcpSend(cmd_set_avr_num)
 # print tcpSend("SET_CHECK_ACC")
+# print tcpSend(cmd_get_wifi_info)
+# print tcpSend(cmd_play_music)
+# time.sleep(10)
+# print tcpSend(cmd_stop_music)
