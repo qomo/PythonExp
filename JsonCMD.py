@@ -71,7 +71,8 @@ def test_sensor(sensor_type):
 # test_sensor("TYPE_ACCELEROMETER")
 # test_sensor("TYPE_GYROSCOPE")
 # test_sensor("TYPE_MAGNETIC_FIELD")
-test_sensor("TYPE_LIGHT")
+test_sensor("TYPE_ORIENTATION")
+# test_sensor("TYPE_LIGHT")
 # print tcpSend(cmd_wifi_connect)
 # print cmd_set_avr_num
 # print tcpSend(cmd_sensor_on)
