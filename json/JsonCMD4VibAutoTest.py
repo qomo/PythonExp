@@ -35,9 +35,12 @@ cmd_set_paras = json.dumps({
 	"AVR_TIME": 2000,
 	"AVR_COUNT": 20
 	})
+cmd_test_no_vib = json.dumps({
+	"CMD": "TEST_NO_VIB"
+	})
 
 
 # print tcpSend(cmd_wifi_connect)
 # print tcpSend(cmd_get_wifi_info)
-print tcpSend(cmd_set_paras)
-print tcpSend(cmd_vib_test)
+# print tcpSend(cmd_set_paras, "192.168.1.151")
+print tcpSend(cmd_vib_test, "192.168.1.151")

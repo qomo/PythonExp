@@ -49,6 +49,11 @@ cmd_play_music = json.dumps({
 cmd_stop_music = json.dumps({
 	"CMD": "STOP_MUSIC"
 	})
+cmd_sensor_test = json.dumps({
+	"CMD": "SENSOR_TEST",
+	"SENSOR_TYPE": "TYPE_GYROSCOPE",
+	"AVR_TIME": 5000,
+	})
 
 def test_sensor(sensor_type):
 	cmd_sensor_on = json.dumps({
@@ -71,9 +76,9 @@ def test_sensor(sensor_type):
 # test_sensor("TYPE_ACCELEROMETER")
 # test_sensor("TYPE_GYROSCOPE")
 # test_sensor("TYPE_MAGNETIC_FIELD")
-test_sensor("TYPE_ORIENTATION")
+# test_sensor("TYPE_ORIENTATION")
 # test_sensor("TYPE_LIGHT")
-# print tcpSend(cmd_wifi_connect)
+print tcpSend(cmd_sensor_test)
 # print cmd_set_avr_num
 # print tcpSend(cmd_sensor_on)
 # time.sleep(0.5)
