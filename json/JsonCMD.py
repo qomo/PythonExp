@@ -68,17 +68,45 @@ def test_sensor(sensor_type):
 		"CMD": "PULL_DATA",
 		"SENSOR_TYPE": sensor_type
 		})
+	cmd_get_realtime_data = json.dumps({
+		"CMD": "GET_SENSOR_VALUE",
+		"SENSOR_TYPE": sensor_type
+		})
 	print tcpSend(cmd_sensor_on)
 	print tcpSend(cmd_pull_sensor_data)
+	print tcpSend(cmd_get_realtime_data)
+	print tcpSend(cmd_get_realtime_data)
+	print tcpSend(cmd_get_realtime_data)
+	print tcpSend(cmd_get_realtime_data)
 	print tcpSend(cmd_sensor_off)
 
+def get_sensor_avr(sensor_type, avr_time):
+	cmd_get_avr_value = json.dumps({
+		"CMD": "GET_SENSOR_AVR_VALUE",
+		"SENSOR_TYPE": sensor_type,
+		"AVR_TIME": avr_time
+		})
+	print tcpSend(cmd_get_avr_value)
+
+avr_times = [100, 1000, 2000, 3000]
+sensor_types = ["TYPE_ACCELEROMETER", "TYPE_GYROSCOPE", "TYPE_MAGNETIC_FIELD", "TYPE_ORIENTATION"]
+
+# get_sensor_avr("TYPE_PRESSURE", "1000")
+
+# for sensor_type in sensor_types:
+# 	for avr_time in avr_times:
+# 		print sensor_type, " ", avr_time
+# 		get_sensor_avr(sensor_type, avr_time)
+
+# get_sensor_avr("TYPE_GYROSCOPE", 400)
 
 # test_sensor("TYPE_ACCELEROMETER")
 # test_sensor("TYPE_GYROSCOPE")
 # test_sensor("TYPE_MAGNETIC_FIELD")
 # test_sensor("TYPE_ORIENTATION")
 # test_sensor("TYPE_LIGHT")
-print tcpSend(cmd_sensor_test)
+test_sensor("TYPE_PRESSURE")
+# print tcpSend(cmd_sensor_test)
 # print cmd_set_avr_num
 # print tcpSend(cmd_sensor_on)
 # time.sleep(0.5)
