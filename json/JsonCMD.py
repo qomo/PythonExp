@@ -98,14 +98,14 @@ sensor_types = ["TYPE_ACCELEROMETER", "TYPE_GYROSCOPE", "TYPE_MAGNETIC_FIELD", "
 # 		print sensor_type, " ", avr_time
 # 		get_sensor_avr(sensor_type, avr_time)
 
-# get_sensor_avr("TYPE_GYROSCOPE", 400)
+get_sensor_avr("TYPE_GYROSCOPE_UNCALIBRATED", 4000)
 
 # test_sensor("TYPE_ACCELEROMETER")
 # test_sensor("TYPE_GYROSCOPE")
 # test_sensor("TYPE_MAGNETIC_FIELD")
 # test_sensor("TYPE_ORIENTATION")
 # test_sensor("TYPE_LIGHT")
-test_sensor("TYPE_PRESSURE")
+# test_sensor("TYPE_GYROSCOPE_UNCALIBRATED")
 # print tcpSend(cmd_sensor_test)
 # print cmd_set_avr_num
 # print tcpSend(cmd_sensor_on)
