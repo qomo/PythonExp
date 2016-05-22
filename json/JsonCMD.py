@@ -98,7 +98,7 @@ sensor_types = ["TYPE_ACCELEROMETER", "TYPE_GYROSCOPE", "TYPE_MAGNETIC_FIELD", "
 # 		print sensor_type, " ", avr_time
 # 		get_sensor_avr(sensor_type, avr_time)
 
-get_sensor_avr("TYPE_GYROSCOPE_UNCALIBRATED", 4000)
+get_sensor_avr("TYPE_PRESSURE", 4000)
 
 # test_sensor("TYPE_ACCELEROMETER")
 # test_sensor("TYPE_GYROSCOPE")
